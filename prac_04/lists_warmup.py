@@ -12,3 +12,6 @@ numbers = [3, 1, 4, 1, 5, 9, 2]
 # print("3" in numbers) - False
 # print(numbers + [6, 5, 3]) - [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
 
+# 1. Change the first element of numbers to "ten" (the string, not the number 10)
+numbers[0]= "ten"
+
