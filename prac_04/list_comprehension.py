@@ -2,7 +2,6 @@
 CP1404/CP5632 Practical
 List comprehensions
 """
-
 names = ["Bob", "Angel", "Jimi", "Alan", "Ada"]
 full_names = ["Bob Martin", "Angel Harlem", "Jimi Hendrix", "Alan Turing", "Ada Lovelace"]
 
@@ -29,14 +28,15 @@ print(a_names)
 # 'Ada Alan Angel Bob Jimi'
 print(" ".join(sorted(names)))
 
-# create a list of all the full_names in lowercase format
+# a list of all the full_names in lowercase format
 lowercase_full_names = [name.lower() for name in full_names]
 print(lowercase_full_names)
 
 almost_numbers = ['0', '10', '21', '3', '-7', '88', '9']
 
-# list comprehension to create a list of integers from the above list of strings
-# numbers =
+# a list of integers from the above list of strings
+numbers =[int(integers) for integers in almost_numbers]
+print(numbers)
 
 #  list comprehension to create a list of only the numbers that are
 # greater than 9 from the numbers (not strings) you just created
