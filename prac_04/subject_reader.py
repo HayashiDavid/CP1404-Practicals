@@ -18,7 +18,7 @@ def get_data():
     input_file.close()
     return data
 
-def print_data(records):
+def processing_data(records):
     """ Print the datas """
     datasets = []
     for line in records:
@@ -31,6 +31,7 @@ def print_data(records):
         print(parts)  # See if that worked
         datasets.append(parts)
     return  datasets
+
 
 
 main()
