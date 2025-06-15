@@ -8,8 +8,8 @@ FILENAME = "subject_data.txt"
 
 def main():
     records = get_data()
-
-
+    data = processing_data(records)
+    display_report(data)
 
 def get_data():
     """Read the data file: subject, lecturer, number of students..."""
@@ -32,6 +32,10 @@ def processing_data(records):
         datasets.append(parts)
     return  datasets
 
-
+def display_report(data):
+    """ Display the final report """
+    for line in data:
+        print(f"{line[0]} is taught by {line[1]} and has {line[2]} students")
+        print('')
 
 main()
