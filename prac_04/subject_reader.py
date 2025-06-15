@@ -2,25 +2,22 @@
 CP1404/CP5632 Practical
 Data file -> lists program
 """
-
 FILENAME = "subject_data.txt"
-
-
 def main():
     records = get_data()
     data = processing_data(records)
     display_report(data)
 
 def get_data():
-    """Read the data file: subject, lecturer, number of students..."""
+    """Read data from file formatted like: subject,lecturer,number of students."""
     input_file = open(FILENAME)
-    data = input_file.readline()
+    data = input_file.readlines()
     input_file.close()
     return data
 
 def processing_data(records):
-    """ Print the datas """
-    datasets = []
+    """Printing all datas"""
+    dataset = []
     for line in records:
         print(line)  # See what a line looks like
         print(repr(line))  # See what a line really looks like
@@ -29,13 +26,12 @@ def processing_data(records):
         print(parts)  # See what the parts look like (notice the integer is a string)
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
         print(parts)  # See if that worked
-        datasets.append(parts)
-    return  datasets
+        dataset.append(parts)
+    return dataset
 
 def display_report(data):
-    """ Display the final report """
+    """Function for displaying final report data"""
     for line in data:
         print(f"{line[0]} is taught by {line[1]} and has {line[2]} students")
-        print('')
 
 main()
