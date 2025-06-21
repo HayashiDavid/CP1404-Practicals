@@ -16,6 +16,13 @@ def main():
     # Get countries
     countries = get_countries(data)
 
+    # Display results
+    print("Wimbledon Champions: ")
+    for name, wins in champions.items():
+        print(f"{name} {wins}")
+
+    print(f"\nThese {len(countries)} countries have won Wimbledon: ")
+    print(", ".join(sorted(countries)))
 
 
 def read_data(filename):
