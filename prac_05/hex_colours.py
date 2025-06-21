@@ -12,13 +12,13 @@ COLOURS_TO_CODE = {
 
 def main():
     """Validate colour name and print corresponding message"""
-    colour_name = validate_colur_name()
+    colour_name = validate_colour_name()
     while colour_name != "":
         colour_code = COLOURS_TO_CODE[colour_name]
         print(f"{colour_code}")
-        colour_name = validate_colur_name()
+        colour_name = validate_colour_name()
 
-def validate_colur_name():
+def validate_colour_name():
     """Check if the input is one of the colour names"""
     colour_name = input("Colour Name: ").title()
     while colour_name not in COLOURS_TO_CODE:
