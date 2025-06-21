@@ -55,5 +55,4 @@ def get_countries(data):
     return countries
 
 
-
 main()
