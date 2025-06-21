@@ -10,6 +10,7 @@ def main():
     words_to_count = count_words(text)
 
 def count_words(text):
+    """ Count words and return to dictionary """
     words_to_count = {}
     phrases = text.split()
 
@@ -20,3 +21,7 @@ def count_words(text):
             words_to_count[text] = 1
 
     return words_to_count
+
+def sort_words(words_to_count):
+    """ Sort words alphabetically """
+    return  sorted(words_to_count.key())
