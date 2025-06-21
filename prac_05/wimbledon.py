@@ -7,17 +7,23 @@ Actual: 50 minutes
 FILENAME = "wimbledon.csv"
 
 def main():
-    """Read and display champions and winning countries information"""
-    # with open(FILENAME, "r", encoding="utf-8-sig") as in file:
-        # data = in_file.readlines()
-        # champions = extract_data()
+    # Read data
+    data = read_data("wimbledon.csv")
 
 
 
-def extract_data(data, number):
-    """ Get the data and number """
-    items = []
-    for line in data[1:]:
-        items.append(line.strip().split(",")[number])
-    return items
 
+def read_data(filename):
+    """Read data from file and return list of lists"""
+    data = []
+    with open(filename, "r", encoding="utf-8-sig") as file:
+        for line in file:
+            parts = line.strip().split(',')
+            data.append(parts)
+    return data
+
+
+
+
+
+main()
