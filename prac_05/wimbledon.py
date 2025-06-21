@@ -10,6 +10,11 @@ def main():
     # Read data
     data = read_data("wimbledon.csv")
 
+    # Count champions
+    champions = count_champions(data)
+
+    # Get countries
+    countries = get_countries(data)
 
 
 
@@ -35,6 +40,12 @@ def count_champions(data):
     return champions
 
 
+def get_countries(data):
+    """Get unique countries"""
+    countries = set()
+    for row in data:
+        countries.add(row[2])
+    return countries
 
 
 
