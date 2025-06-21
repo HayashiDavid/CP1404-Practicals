@@ -20,12 +20,13 @@ def main():
         email = validate_email()
         user_name = process_name(email)
 
-
+    for email in email_to_name:
+        print(f"{email_to_name[email]} ({email})")
 
 
 def process_name(email):
     """Determine user email and username"""
-    name = email.split()
+    name = email.split('@')[0]
     name_parts = name.split('.')
     name_parts = [part.title() for part in name_parts]
     name = '.'.join(name_parts)
@@ -41,3 +42,5 @@ def validate_email():
         print("This is not a valid email, try again!")
         email = input("Email: ")
     return email
+
+main()
