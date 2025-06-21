@@ -11,6 +11,13 @@ def main():
 
 
 
+def process_name(email):
+    """Determine user email and username"""
+    name = email.split()
+    name_parts = name.split('.')
+    name_parts = [part.title() for part in name_parts]
+    name = '.'.join(name_parts)
+    return name
 
 
 def validate_email():
