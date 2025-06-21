@@ -23,6 +23,18 @@ def read_data(filename):
     return data
 
 
+def count_champions(data):
+    """Count wins for each champion"""
+    champions = {}
+    for row in data:
+        name = row[1]
+        if name in champions:
+            champions[name] += 1
+        else:
+            champions[name] = 1
+    return champions
+
+
 
 
 
