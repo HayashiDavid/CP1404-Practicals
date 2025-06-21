@@ -1,13 +1,25 @@
 """
 Emails
 Estimate: 45 Minutes
-Actual:
+Actual: 30 Minutes
 """
 
 def main():
     email_to_name = {}
 
     email = validate_email()
+    user_name = process_name(email)
+
+    while email != "":
+        choice = input(f"Is your name {user_name}? (Y/N) ").upper()
+        if choice == "Y":
+            email_to_name[email] = user_name
+        else:
+            modified_name = input("Name: ")
+            email_to_name[email] = modified_name
+        email = validate_email()
+        user_name = process_name(email)
+
 
 
 
