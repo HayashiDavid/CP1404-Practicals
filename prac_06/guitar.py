@@ -6,3 +6,12 @@ class Guitar:
         self.name = name
         self.year = year
         self.cost = cost
+
+    def __str__(self):
+        """Return the string"""
+        return f"{self.name} ({self.year}): ${self.cost:,.2f}"
+
+    def get_age(self):
+        """This function allows it to calculate to get the age"""
+        age = CURRENT_TIME - self.year
+        return age
