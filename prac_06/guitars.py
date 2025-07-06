@@ -11,6 +11,34 @@ def main():
     guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
     guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
 
+    name = input("Name: ").strip()
+    while name != "":
+        year = int(get_valid_number("Year: "))
+        cost = get_valid_number("Cost: $")
+        guitars.append(Guitar(name, year, cost))
+        print(f"{name} ({year}) : ${cost:.2f} added.\n")
+        name = input("Name: ").strip()
+
+    print("\n... snip ...\n")
+    print("These are my guitars:")
+    display_guitars(guitars)
+
+
+
+def get_valid_number(prompt):
+    """Get any valid positive number."""
+    is_valid = False
+
+    while not is_valid:
+        try:
+            number = float(input(prompt))
+            if number > MINIMUM_NUMBER:
+                is_valid = True
+            else:
+                print("Number must be positive")
+        except ValueError:
+            print("Please enter a proper number")
+    return number
 
 
 def display_guitars(guitars):
