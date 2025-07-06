@@ -10,9 +10,10 @@ class ProgrammingLanguage:
         """ Return the string"""
         return f"{self.name}, {self.typing} typing, Reflection = {self.reflection}, First appeared in {self.year}"
 
-    def __is_dynamic(self):
+    def is_dynamic(self):
         """ Check whether it is dynamic or not"""
         if self.typing == "Dynamic":
             return True
         else:
             return False
+
