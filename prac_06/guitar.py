@@ -15,3 +15,11 @@ class Guitar:
         """This function allows it to calculate to get the age"""
         age = CURRENT_TIME - self.year
         return age
+
+    def is_vintage(self):
+        """Check if vintage or not"""
+        age = self.get_age()
+        if age > 50:
+            return True
+        else:
+            return False
