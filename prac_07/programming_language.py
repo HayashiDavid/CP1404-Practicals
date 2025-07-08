@@ -19,15 +19,13 @@ class ProgrammingLanguage:
         """Return string representation of a ProgrammingLanguage."""
         return f"{self.name}, {self.typing} Typing, Reflection={self.reflection}, First appeared in {self.year}"
 
-
-
     def is_dynamic(self):
         """Determine if language is dynamically typed."""
         return self.typing == "Dynamic"
 
     def has_pointer_arithmetic(self):
         """ Determine if language supports pointer arithmetic """
-        return  self.pointer_arithmetic()
+        return  self.pointer_arithmetic
 
 
 def run_tests():
@@ -43,7 +41,10 @@ def run_tests():
     for language in languages:
         if language.is_dynamic():
             print(language.name)
-
+    print("The languages with pointer arithmetic are:")
+    for language in languages:
+        if language.has_pointer_arithmetic():
+            print(language.name)
 
 if __name__ == "__main__":
     run_tests()
