@@ -12,6 +12,10 @@ class Guitar:
         """Return the string"""
         return f"{self.name} ({self.year}): ${self.cost:,.2f}"
 
+    def __lt__(self, other):
+        """ Compare the year attribute to see which is less """
+        return self.year < other.year
+
     def get_age(self):
         """This function allows it to calculate to get the age"""
         age = CURRENT_TIME - self.year
@@ -21,6 +25,3 @@ class Guitar:
         """Check if vintage or not"""
         return self.get_age() >= VINTAGE_YEAR
 
-    def __lt__(self, other):
-        """ Compare the year attribute to see which is less """
-        return self.year < other.year
