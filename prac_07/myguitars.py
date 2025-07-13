@@ -23,7 +23,7 @@ def read_guitars(filename):
             for line in in_file:
                 line = line.strip()
                 if line:
-                    parameters = line.split()
+                    parameters = line.split(',')
                     if len(parameters) == 3:
                         name, year, cost = parameters
                         guitar = Guitar(name, int(year), float(cost))
