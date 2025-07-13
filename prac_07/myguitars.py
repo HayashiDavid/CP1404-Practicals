@@ -3,7 +3,13 @@ FILENAME = "guitars.csv"
 
 def main():
     """ Read guitar data and ask user to add more to the file """
+    guitars = read_guitars(FILENAME)
+    print(f"Imported {len(guitars)} from {FILENAME}")
+    print("My Guitars!! ")
 
+    guitars.sort()
+    print(" \nThese are my guitars sorted by year (Oldest >>> Newest")
+    display_guitars(guitars)
 
 
 
@@ -30,9 +36,37 @@ def display_guitars(guitars):
         print(f"Guitar {index}: {guitar}")
 
 
-main()
+def add_guitars():
+    """ Add the new guitars from user """
+    guitars = []
+
+    name = input("Guitar name>>> ").strip()
+    while name != "":
+        year = input(get_valid_number("Year>>> "))
+        cost = input(get_valid_number("Cost ($) >>> "))
+        guitar = Guitar(name, year, cost)
+        guitars.append(guitar)
+
+        print(f"Guitar added>>> {guitar}")
+
+        name = input("Guitar name>>> ").strip()
+    return guitars
 
 
+def get_valid_number(prompt):
+    """Validate input to get proper number"""
+    is_valid = False
+
+    while not is_valid:
+        try:
+            number = float(input(prompt))
+            if number > 0:
+                is_valid = True
+            else:
+                print("Invalid input! Please enter valid numbers.")
+        except ValueError:
+            print("Value Error; Please enter a proper number.")
+    return number
 
 
 
