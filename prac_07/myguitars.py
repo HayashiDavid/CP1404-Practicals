@@ -68,5 +68,11 @@ def get_valid_number(prompt):
             print("Value Error; Please enter a proper number.")
     return number
 
+def write_guitars_to_file(filename, guitars):
+    """Write guitars to CSV file"""
+    with open(filename, 'w') as file:
+        for guitar in guitars:
+            file.write(f"{guitar.name},{guitar.year},{guitar.cost}\n")
 
 
+main()
