@@ -24,6 +24,12 @@ def read_guitars(filename):
         print(f"File {filename} not found, try again")
     return guitars
 
+def display_guitars(guitars):
+    """ Display all guitars in the csv file in a list """
+    for index, guitar in enumerate(guitars, 1):
+        print(f"Guitar {index}: {guitar}")
+
+
 main()
 
 
