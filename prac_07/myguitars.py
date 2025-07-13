@@ -11,6 +11,8 @@ def main():
     print(" \nThese are my guitars sorted by year (Oldest >>> Newest")
     display_guitars(guitars)
 
+    write_guitars_to_file(FILENAME, guitars)
+    print(f"Added {len(guitars)} guitars to {FILENAME}")
 
 
 def read_guitars(filename):
