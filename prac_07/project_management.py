@@ -98,10 +98,13 @@ def sort_project_by_date(date, sorted_filtered_projects):
     filtered_projects = []
     filtered_dates = []
     final_sorted_filtered_dates = []
+
     filter_projects(date, filtered_projects)
     filter_dates(filtered_dates, filtered_projects)
+
     sorted_filtered_dates = [date for date in sorted(filtered_dates)]
     remove_duplicated_dates(final_sorted_filtered_dates, sorted_filtered_dates)
+
     for date in final_sorted_filtered_dates:
         for project in filtered_projects:
             if date == project.start_date:
