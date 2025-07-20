@@ -23,6 +23,4 @@ class DynamicLabelsApp(App):
             temp_button = Label(text=name)
             self.root.ids.label_box.add_widget(temp_button)
 
-
-
 DynamicLabelsApp().run()
