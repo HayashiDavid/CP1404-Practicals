@@ -14,10 +14,14 @@ class DynamicLabelsApp(App):
         """ Building the Kivy app from the kv file """
         self.title = "Dynamic Labels"
         self.root = Builder.load_file('dynamic_labels.kv')
-
+        self.create_labels()
         return self.root
 
-
+    def create_labels(self):
+        """ Putting the names into the app """
+        for name in self.names:
+            temp_button = Label(text=name)
+            self.root.ids.label_box.add_widget(temp_button)
 
 
 
