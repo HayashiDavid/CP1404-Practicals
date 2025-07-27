@@ -22,7 +22,19 @@ def main():
             except IndexError:
                 print("Invalid taxi choice")
         elif menu_choice == "d":
-            pass
+            if current_taxi:
+                current_taxi.start_fare()
+                trip_distance = float(input("Drive for how far?>>> "))
+                while trip_distance < 0:
+                    print("Invalid distance")
+                    trip_distance = float(input("Drive for how far?>>> "))
+                current_taxi.drive(trip_distance)
+                trip_cost = current_taxi.get_fare()
+                print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+                total_bill += trip_cost
+            else:
+                print("Please choose a taxi first before consider to drive")
+
         else:
             print("Invalid option")
             print(MENU)
