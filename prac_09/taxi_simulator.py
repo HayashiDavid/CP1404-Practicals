@@ -14,7 +14,13 @@ def main():
 
     while menu_choice != "q":
         if menu_choice == "c":
-            pass
+            print("Taxis available: ")
+            display_taxis(taxis)
+            taxi_choice = int(input("Choose taxi: "))
+            try:
+                current_taxi = taxis[taxi_choice]
+            except IndexError:
+                print("Invalid taxi choice")
         elif menu_choice == "d":
             pass
         else:
@@ -22,3 +28,7 @@ def main():
             print(MENU)
             menu_choice = input(""">>> """).lower()
 
+def display_taxis(taxis):
+    """Display taxi from the list."""
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
