@@ -6,7 +6,9 @@ MENU = "(q)uit, (c)hoose taxi, (d)rive"
 
 def main():
     total_bill = 0
-
+    taxis = [Taxi("Prius", 100),
+             SilverServiceTaxi("Limo", 100, 2),
+             SilverServiceTaxi("Hummer", 200, 4)]
 
     print("Let's drive!")
     print(MENU)
@@ -34,11 +36,16 @@ def main():
                 total_bill += trip_cost
             else:
                 print("Please choose a taxi first before consider to drive")
-
         else:
             print("Invalid option")
-            print(MENU)
-            menu_choice = input(""">>> """).lower()
+        print(f"Bill to date: ${total_bill:.2f}")
+        print(MENU)
+        menu_choice = input(""">>> """).lower()
+
+    print(f"Total trip cost: ${total_bill:.2f}")
+    print("Taxis are now:")
+    display_taxis(taxis)
+
 
 def display_taxis(taxis):
     """Display taxi from the list."""
